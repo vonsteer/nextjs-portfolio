@@ -1,16 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Poppins&display=swap');
+
+:root {
+  --primary-bg-color: #fffcf2;
+  --primary-fg-color: #403d39;
+  --secondary-bg-color: #ccc5b9;
+  --secondary-fg-color: #252422;
+  --highlight-color: #eb5e28;
+}
+
 html,
 body {
   padding: 0;
+  background-color: var(--primary-bg-color);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Poppins, cursive;;
+}
+
+.button {
+  cursor: pointer;
+  padding: 8px;
+  margin: 10px;
+  border-style: solid;
+  border-radius: 4px;
+  border-width: 1px;
+  color: var(--primary-fg-color);
+}
+.button:hover {
+  background-color: var(--highlight-color);
+  color: var(--primary-bg-color);
+  outline: currentcolor none medium;
 }
 
 a {
-  color: inherit;
+  color: var(--primary-fg-color);
   text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
+}
+
+p, h1, h2, h3 {
+  color: var(--primary-fg-color);
+  text-align: center;
+}
+
+
+.spinner {
+  animation: spinner .5s linear infinite;
+  border-color: #000 rgba(0,0,0,.1) rgba(0,0,0,.1);
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  display: inline-block;
+  height: 44px;
+  width: 44px;
+}
+
+.page-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.fade-in-top {
+	-webkit-animation: fade-in-top 0.6s ease-out 100ms both;
+	        animation: fade-in-top 0.6s ease-out 100ms both;
+}
+
+.dot-1 {
+  align-self: center;
+  justify-self: center;
+  animation: loading 1s infinite linear;
+  grid-column: 2;
+  grid-row: 2;
+}
+.dot-2 {
+  align-self: center;
+  justify-self: center;
+  color: aqua;
+  animation: loading 1s infinite linear;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+
+@keyframes spinner {
+0% {
+  transform: translate3d(0,0,0) rotate(0);
+}
+100% {
+  transform: translate3d(0,0,0) rotate(359deg);
+}
+}
+
+
+
+@keyframes rotate_on_axis {
+0% {
+  transform: rotate(0deg) translateX(98px);;
+}
+
+100% {
+  transform: rotate(360deg) translateX(98px);;
+  }
+}
+
+
+@-webkit-keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
 }
