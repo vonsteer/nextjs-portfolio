@@ -39,7 +39,7 @@ export default function Home() {
             <p>Based in Barcelona, Spain. I have a passion for learning and am commited to delivering the best results possible on-time regardless of any challenges presented. </p>
             <a className="button" href="mailto:jglconstante@gmail.com">Get in Touch!</a>
           <div className={styles.section}>
-            <div className="spinner"></div>
+            <div></div>
           </div>
         </div>
         </div>
