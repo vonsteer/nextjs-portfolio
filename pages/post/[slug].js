@@ -3,13 +3,15 @@ import styles from "../../styles/Post.module.css";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from '@sanity/block-content-to-react'
 import { Navbar } from "../../components/navbar";
+import { Footer } from "../../components/footer";
 import { useState, useEffect } from "react";
 
 export const Post = ({ title, body, image }) => {
   const [imageUrl, setImageUrl] = useState("");
+  const SANITY_PROJECT_ID = process.env.SANITY_PROJECT_ID
   useEffect(() => {
     const imgBuilder = imageUrlBuilder({
-      projectId: "3fhf9z46",
+      projectId: SANITY_PROJECT_ID,
       dataset: "production",
     });
     
@@ -31,6 +33,7 @@ export const Post = ({ title, body, image }) => {
             <BlockContent blocks={body} />
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );
@@ -48,8 +51,8 @@ export const getServerSideProps = async (pageContext) => {
   const query = encodeURIComponent(
     `*[ _type == "post" &&  slug.current == "${pageSlug}" ] `
   );
-
-  const url = `https://3fhf9z46.api.sanity.io/v1/data/query/production?query=${query}`;
+  const SANITY_PROJECT_ID = process.env.SANITY_PROJECT_ID;
+  const url = `https://${SANITY_PROJECT_ID}.api.sanity.io/v1/data/query/production?query=${query}`;
 
   const result = await fetch(url).then((res) => res.json());
   const post = result.result[0];
