@@ -21,15 +21,22 @@ body {
   padding: 8px;
   margin: 10px;
   border-style: solid;
-  border-radius: 4px;
-  border-width: 1px;
+  border-radius: 1vh;
+  border-width: 0.3vh;
   color: var(--primary-fg-color);
 }
 .button:hover {
-  background-color: var(--highlight-color);
-  color: var(--primary-bg-color);
-  outline: currentcolor none medium;
+  background-color: var(--highlight-color) !important;
+  color: var(--primary-bg-color) !important;
+  outline: currentColor none medium;
 }
+.button:focus {
+  background-color: var(--highlight-color);
+  color: var(--primary-bg-color) !important;
+  outline: currentColor none medium;
+  animation: none !important;
+}
+
 
 a {
   color: var(--primary-fg-color);
