@@ -12,9 +12,7 @@
 }
 
 .body p {
-    font-size: 24px;
+    font-size: clamp(16px, 4vw, 22px);
     text-indent: 50px;
-    line-height: 45px;
     text-align: justify;
-    letter-spacing: 1.5px;
 }

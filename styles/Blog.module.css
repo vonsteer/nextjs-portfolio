@@ -9,9 +9,9 @@
   }
 
 .post {
-    margin: 25px;
     width: 500px;
-    height: 316px;
+    margin: 0.2rem;
+    padding:0.2rem;
     text-align: center;
     cursor: pointer;
     max-width: calc(100vw - 50px);
@@ -34,10 +34,11 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .paginator div {
-    margin: 25px;
+    margin: 0.4rem;
 }
 
 .paginator .active {

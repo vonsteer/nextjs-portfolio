@@ -12,6 +12,7 @@
 
 .project {
     max-width: 20rem;
+    margin: .5rem;
     background: var(--secondary-bg-color);
     text-align: center;
     border-radius: .5rem;

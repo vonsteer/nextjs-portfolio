@@ -69,7 +69,7 @@ export const Blog = ({ pageNumber, posts, totalPages, }) => {
                   router.push(`/blog/${pageNumber + 1}`);
                 }
               }}
-              className={pageNumber === totalPages ? styles.disabled : styles.active}
+              className={pageNumber >= totalPages ? styles.disabled : styles.active}
             >
               Next Page
             </div>
@@ -100,8 +100,7 @@ export const getServerSideProps = async (pageContext) => {
   );
   const totalUrl = `https://${SANITY_PROJECT_ID}.api.sanity.io/v1/data/query/production?query=${totalQuery}`;
   const totalResult = await fetch(totalUrl).then((res) => res.json());
-  const totalPages = (totalResult.result + 5 - 1) / 5
-  
+  const totalPages = Math.round(((totalResult.result + 1) / 5))
   const url = `https://${SANITY_PROJECT_ID}.api.sanity.io/v1/data/query/production?query=${query}`;
   const result = await fetch(url).then((res) => res.json());
 
