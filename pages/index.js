@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { Socials } from "../components/socials";
 import { Footer } from '../components/footer';
 import { Navbar } from '../components/navbar';
 import styles from '../styles/Home.module.css';
@@ -27,11 +28,11 @@ export default function Home() {
           content={`Jesse Constante | Developer`}
         />
     </Head>
-    <div className="page-container">
+    <body className="page-container">
       <Navbar />
       <div className="fade-in-top">
-        <div className={styles.main}>
-          <div className={styles.section}>
+        <main className={styles.main}>
+          <section className={styles.section}>
             <div className={styles.animation}>
               <Image src="/profile.jpg" alt="Me" width="250" height="250"></Image>
             </div>
@@ -39,14 +40,19 @@ export default function Home() {
             <h1>Technical Specialist & Self-taught Dev</h1>
             <p>Based in Barcelona, Spain. I have a passion for learning and am commited to delivering the best results possible on-time regardless of any challenges presented. </p>
             <a className="button" href="mailto:jglconstante@gmail.com">Get in Touch!</a>
-          <div className={styles.section}>
-            <div></div>
-          </div>
-        </div>
-        </div>
+          </section>
+          <Socials />
+          <section className={styles.section}>
+            <h3>Technology & Frameworks</h3>
+            <p>Python</p>
+            <p>Javascript</p>
+            <p>Go</p>
+            <p>Rust</p>
+          </section>
+        </main>
       </div>
       <Footer />
-    </div>
+    </body>
     </>
   )
 }

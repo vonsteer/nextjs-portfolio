@@ -1,0 +1,12 @@
+.socialsButton {
+    background: none;
+    z-index: 2;
+    margin: 1rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+
+.up {
+    transform: rotate(180deg);
+}
